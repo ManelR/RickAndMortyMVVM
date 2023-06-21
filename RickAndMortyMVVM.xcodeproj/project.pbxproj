@@ -222,9 +222,9 @@
 		176D88DC2A42ED4C00AB2E05 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				17D2571F2A43A733002AE10B /* DownloadImageRepository */,
-				176D89122A43790800AB2E05 /* DI */,
 				176D89062A435C6600AB2E05 /* CharacterRepository */,
+				176D89122A43790800AB2E05 /* DI */,
+				17D2571F2A43A733002AE10B /* DownloadImageRepository */,
 				176D88FA2A43535900AB2E05 /* HTTPClient */,
 			);
 			path = Domain;
@@ -244,8 +244,8 @@
 			isa = PBXGroup;
 			children = (
 				176D88B22A42EABA00AB2E05 /* Assets.xcassets */,
-				176D88B42A42EABA00AB2E05 /* LaunchScreen.storyboard */,
 				176D88B72A42EABA00AB2E05 /* Info.plist */,
+				176D88B42A42EABA00AB2E05 /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -255,10 +255,10 @@
 			children = (
 				17D257132A4395E8002AE10B /* Cells */,
 				176D88E12A42EFA000AB2E05 /* ListScene.storyboard */,
+				176D891A2A4379D100AB2E05 /* ListScene+DI.swift */,
 				176D88E22A42EFA000AB2E05 /* ListSceneRouter.swift */,
 				176D88E32A42EFA000AB2E05 /* ListSceneViewController.swift */,
 				176D88E42A42EFA000AB2E05 /* ListSceneViewModel.swift */,
-				176D891A2A4379D100AB2E05 /* ListScene+DI.swift */,
 			);
 			path = ListScene;
 			sourceTree = "<group>";
@@ -267,10 +267,10 @@
 			isa = PBXGroup;
 			children = (
 				176D88E92A42EFD200AB2E05 /* DetailScene.storyboard */,
+				176D891C2A437ABE00AB2E05 /* DetailScene+DI.swift */,
 				176D88EA2A42EFD200AB2E05 /* DetailSceneRouter.swift */,
 				176D88EB2A42EFD200AB2E05 /* DetailSceneViewController.swift */,
 				176D88EC2A42EFD200AB2E05 /* DetailSceneViewModel.swift */,
-				176D891C2A437ABE00AB2E05 /* DetailScene+DI.swift */,
 			);
 			path = DetailScene;
 			sourceTree = "<group>";
@@ -287,8 +287,8 @@
 		176D88F62A43525F00AB2E05 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				17D257222A43A763002AE10B /* DownloadImageRepository */,
 				176D89052A435C5D00AB2E05 /* CharacterRepository */,
+				17D257222A43A763002AE10B /* DownloadImageRepository */,
 				176D88F72A43531C00AB2E05 /* HTTPClient */,
 			);
 			path = Network;
@@ -344,8 +344,8 @@
 		176D89062A435C6600AB2E05 /* CharacterRepository */ = {
 			isa = PBXGroup;
 			children = (
-				176D89072A435C7300AB2E05 /* CharacterRepositoryType.swift */,
 				176D890D2A4360BB00AB2E05 /* CharacterDomain.swift */,
+				176D89072A435C7300AB2E05 /* CharacterRepositoryType.swift */,
 			);
 			path = CharacterRepository;
 			sourceTree = "<group>";
@@ -370,8 +370,8 @@
 		176D89132A43791500AB2E05 /* DI */ = {
 			isa = PBXGroup;
 			children = (
-				176D89142A43792E00AB2E05 /* DIRepositoryContainer.swift */,
 				176D89162A43793900AB2E05 /* DIRepository.swift */,
+				176D89142A43792E00AB2E05 /* DIRepositoryContainer.swift */,
 			);
 			path = DI;
 			sourceTree = "<group>";
@@ -415,8 +415,8 @@
 			children = (
 				17D257142A439689002AE10B /* ListSceneTableViewCell.swift */,
 				17D257152A439689002AE10B /* ListSceneTableViewCell.xib */,
-				17D257182A439F7E002AE10B /* ListSceneTableViewCellModel.swift */,
 				17D2571A2A43A035002AE10B /* ListSceneTableViewCell+DI.swift */,
+				17D257182A439F7E002AE10B /* ListSceneTableViewCellModel.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
