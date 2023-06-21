@@ -7,12 +7,12 @@
 
 import Foundation
 
-extension DIRepositoryContainerProtocol {
+extension DIRepositoryContainerType {
     func resolve() -> any ListSceneRouterType {
         return ListSceneRouter()
     }
 
-    func resolve() -> ListSceneViewModelType {
+    func resolve() -> any ListSceneViewModelType {
         return ListSceneViewModel()
     }
 }

@@ -17,17 +17,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bcv-YY-bLR">
-                                <rect key="frame" x="186" y="438" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="fRu-7W-zBo">
+                                <rect key="frame" x="0.0" y="48" width="414" height="848"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="yNj-G0-2LL" id="K3e-NS-EjX"/>
+                                    <outlet property="delegate" destination="yNj-G0-2LL" id="ZRw-YL-9hJ"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="XcF-7s-VQe"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="fRu-7W-zBo" firstAttribute="leading" secondItem="XcF-7s-VQe" secondAttribute="leading" id="6hR-pG-mCM"/>
+                            <constraint firstItem="fRu-7W-zBo" firstAttribute="top" secondItem="XcF-7s-VQe" secondAttribute="top" id="BWk-b0-equ"/>
+                            <constraint firstAttribute="bottom" secondItem="fRu-7W-zBo" secondAttribute="bottom" id="qi0-fC-ecx"/>
+                            <constraint firstItem="XcF-7s-VQe" firstAttribute="trailing" secondItem="fRu-7W-zBo" secondAttribute="trailing" id="xTK-rs-UYn"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="fRu-7W-zBo" id="dd6-ax-phJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KHl-lC-3nE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

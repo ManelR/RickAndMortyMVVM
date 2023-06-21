@@ -11,7 +11,6 @@
 		176D88AC2A42EAB700AB2E05 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176D88AB2A42EAB700AB2E05 /* SceneDelegate.swift */; };
 		176D88B32A42EABA00AB2E05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 176D88B22A42EABA00AB2E05 /* Assets.xcassets */; };
 		176D88B62A42EABA00AB2E05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 176D88B42A42EABA00AB2E05 /* LaunchScreen.storyboard */; };
-		176D88C12A42EABA00AB2E05 /* RickAndMortyMVVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176D88C02A42EABA00AB2E05 /* RickAndMortyMVVMTests.swift */; };
 		176D88CB2A42EABA00AB2E05 /* RickAndMortyMVVMUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176D88CA2A42EABA00AB2E05 /* RickAndMortyMVVMUITests.swift */; };
 		176D88CD2A42EABA00AB2E05 /* RickAndMortyMVVMUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176D88CC2A42EABA00AB2E05 /* RickAndMortyMVVMUITestsLaunchTests.swift */; };
 		176D88E52A42EFA000AB2E05 /* ListScene.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 176D88E12A42EFA000AB2E05 /* ListScene.storyboard */; };
@@ -36,11 +35,15 @@
 		176D89112A43787500AB2E05 /* CharacterRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176D89102A43787400AB2E05 /* CharacterRepositoryTests.swift */; };
 		176D89152A43792E00AB2E05 /* DIRepositoryContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176D89142A43792E00AB2E05 /* DIRepositoryContainer.swift */; };
 		176D89172A43793900AB2E05 /* DIRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176D89162A43793900AB2E05 /* DIRepository.swift */; };
-		176D89192A43798C00AB2E05 /* DIRepositoryContainerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176D89182A43798B00AB2E05 /* DIRepositoryContainerProtocol.swift */; };
+		176D89192A43798C00AB2E05 /* DIRepositoryContainerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176D89182A43798B00AB2E05 /* DIRepositoryContainerType.swift */; };
 		176D891B2A4379D100AB2E05 /* ListScene+DI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176D891A2A4379D100AB2E05 /* ListScene+DI.swift */; };
 		176D891D2A437ABE00AB2E05 /* DetailScene+DI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176D891C2A437ABE00AB2E05 /* DetailScene+DI.swift */; };
 		176D891F2A437BF600AB2E05 /* SpyHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176D891E2A437BF600AB2E05 /* SpyHTTPClient.swift */; };
 		176D89222A437EC400AB2E05 /* MockHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176D89212A437EC400AB2E05 /* MockHTTPClient.swift */; };
+		17D257082A438594002AE10B /* ListSceneViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D257072A438594002AE10B /* ListSceneViewModelTests.swift */; };
+		17D2570B2A438AC9002AE10B /* MockDIRepositoryContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D2570A2A438AC9002AE10B /* MockDIRepositoryContainer.swift */; };
+		17D2570D2A438B6B002AE10B /* StubCharacterRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D2570C2A438B6B002AE10B /* StubCharacterRepository.swift */; };
+		17D257102A438C1F002AE10B /* BaseXCTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D2570F2A438C1F002AE10B /* BaseXCTestCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,7 +71,6 @@
 		176D88B52A42EABA00AB2E05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		176D88B72A42EABA00AB2E05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		176D88BC2A42EABA00AB2E05 /* RickAndMortyMVVMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RickAndMortyMVVMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		176D88C02A42EABA00AB2E05 /* RickAndMortyMVVMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickAndMortyMVVMTests.swift; sourceTree = "<group>"; };
 		176D88C62A42EABA00AB2E05 /* RickAndMortyMVVMUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RickAndMortyMVVMUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		176D88CA2A42EABA00AB2E05 /* RickAndMortyMVVMUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickAndMortyMVVMUITests.swift; sourceTree = "<group>"; };
 		176D88CC2A42EABA00AB2E05 /* RickAndMortyMVVMUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickAndMortyMVVMUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -94,12 +96,16 @@
 		176D89102A43787400AB2E05 /* CharacterRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterRepositoryTests.swift; sourceTree = "<group>"; };
 		176D89142A43792E00AB2E05 /* DIRepositoryContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIRepositoryContainer.swift; sourceTree = "<group>"; };
 		176D89162A43793900AB2E05 /* DIRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIRepository.swift; sourceTree = "<group>"; };
-		176D89182A43798B00AB2E05 /* DIRepositoryContainerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIRepositoryContainerProtocol.swift; sourceTree = "<group>"; };
+		176D89182A43798B00AB2E05 /* DIRepositoryContainerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIRepositoryContainerType.swift; sourceTree = "<group>"; };
 		176D891A2A4379D100AB2E05 /* ListScene+DI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListScene+DI.swift"; sourceTree = "<group>"; };
 		176D891C2A437ABE00AB2E05 /* DetailScene+DI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailScene+DI.swift"; sourceTree = "<group>"; };
 		176D891E2A437BF600AB2E05 /* SpyHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyHTTPClient.swift; sourceTree = "<group>"; };
 		176D89212A437EC400AB2E05 /* MockHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHTTPClient.swift; sourceTree = "<group>"; };
 		17D257042A438353002AE10B /* RickAndMortyMVVM.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = RickAndMortyMVVM.xctestplan; sourceTree = "<group>"; };
+		17D257072A438594002AE10B /* ListSceneViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSceneViewModelTests.swift; sourceTree = "<group>"; };
+		17D2570A2A438AC9002AE10B /* MockDIRepositoryContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDIRepositoryContainer.swift; sourceTree = "<group>"; };
+		17D2570C2A438B6B002AE10B /* StubCharacterRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubCharacterRepository.swift; sourceTree = "<group>"; };
+		17D2570F2A438C1F002AE10B /* BaseXCTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseXCTestCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,8 +169,9 @@
 		176D88BF2A42EABA00AB2E05 /* RickAndMortyMVVMTests */ = {
 			isa = PBXGroup;
 			children = (
+				17D2570E2A438C04002AE10B /* Base */,
+				17D257052A43857E002AE10B /* Presentation */,
 				176D88FF2A4353F100AB2E05 /* Data */,
-				176D88C02A42EABA00AB2E05 /* RickAndMortyMVVMTests.swift */,
 			);
 			path = RickAndMortyMVVMTests;
 			sourceTree = "<group>";
@@ -288,6 +295,7 @@
 		176D88FF2A4353F100AB2E05 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				17D257092A438AAC002AE10B /* DI */,
 				176D890F2A43785C00AB2E05 /* CharacterRepository */,
 				176D89002A4353F500AB2E05 /* HTTPClient */,
 			);
@@ -327,6 +335,7 @@
 			isa = PBXGroup;
 			children = (
 				176D89102A43787400AB2E05 /* CharacterRepositoryTests.swift */,
+				17D2570C2A438B6B002AE10B /* StubCharacterRepository.swift */,
 			);
 			path = CharacterRepository;
 			sourceTree = "<group>";
@@ -334,7 +343,7 @@
 		176D89122A43790800AB2E05 /* DI */ = {
 			isa = PBXGroup;
 			children = (
-				176D89182A43798B00AB2E05 /* DIRepositoryContainerProtocol.swift */,
+				176D89182A43798B00AB2E05 /* DIRepositoryContainerType.swift */,
 			);
 			path = DI;
 			sourceTree = "<group>";
@@ -346,6 +355,38 @@
 				176D89162A43793900AB2E05 /* DIRepository.swift */,
 			);
 			path = DI;
+			sourceTree = "<group>";
+		};
+		17D257052A43857E002AE10B /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				17D257062A438584002AE10B /* ListScene */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		17D257062A438584002AE10B /* ListScene */ = {
+			isa = PBXGroup;
+			children = (
+				17D257072A438594002AE10B /* ListSceneViewModelTests.swift */,
+			);
+			path = ListScene;
+			sourceTree = "<group>";
+		};
+		17D257092A438AAC002AE10B /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				17D2570A2A438AC9002AE10B /* MockDIRepositoryContainer.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		17D2570E2A438C04002AE10B /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				17D2570F2A438C1F002AE10B /* BaseXCTestCase.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -516,7 +557,7 @@
 				176D891D2A437ABE00AB2E05 /* DetailScene+DI.swift in Sources */,
 				176D89172A43793900AB2E05 /* DIRepository.swift in Sources */,
 				176D88AA2A42EAB700AB2E05 /* AppDelegate.swift in Sources */,
-				176D89192A43798C00AB2E05 /* DIRepositoryContainerProtocol.swift in Sources */,
+				176D89192A43798C00AB2E05 /* DIRepositoryContainerType.swift in Sources */,
 				176D88FE2A43537800AB2E05 /* HTTPError.swift in Sources */,
 				176D88F92A43532A00AB2E05 /* HTTPClient.swift in Sources */,
 				176D891B2A4379D100AB2E05 /* ListScene+DI.swift in Sources */,
@@ -532,12 +573,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				176D88C12A42EABA00AB2E05 /* RickAndMortyMVVMTests.swift in Sources */,
 				176D89112A43787500AB2E05 /* CharacterRepositoryTests.swift in Sources */,
 				176D89222A437EC400AB2E05 /* MockHTTPClient.swift in Sources */,
 				176D89022A43540900AB2E05 /* MockURLProtocol.swift in Sources */,
+				17D2570D2A438B6B002AE10B /* StubCharacterRepository.swift in Sources */,
+				17D257102A438C1F002AE10B /* BaseXCTestCase.swift in Sources */,
 				176D89042A43542100AB2E05 /* HTTPClientTests.swift in Sources */,
 				176D891F2A437BF600AB2E05 /* SpyHTTPClient.swift in Sources */,
+				17D2570B2A438AC9002AE10B /* MockDIRepositoryContainer.swift in Sources */,
+				17D257082A438594002AE10B /* ListSceneViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

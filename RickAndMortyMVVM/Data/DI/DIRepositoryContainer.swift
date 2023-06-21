@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class DIRepositoryContainer: DIRepositoryContainerProtocol {
+final class DIRepositoryContainer: DIRepositoryContainerType {
     // MARK: - Repositories
     func resolve() -> CharacterRepositoryType {
         return CharacterRepository()

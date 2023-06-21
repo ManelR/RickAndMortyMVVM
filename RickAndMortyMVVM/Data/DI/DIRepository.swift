@@ -9,13 +9,13 @@ import Foundation
 
 class DIRepository {
 
-    private static var initialized: DIRepositoryContainerProtocol?
+    private static var initialized: DIRepositoryContainerType?
 
-    public static var shared: DIRepositoryContainerProtocol {
+    public static var shared: DIRepositoryContainerType {
         return initialized ?? DIRepositoryContainer()
     }
 
-    public static func initialize(_ initialized: DIRepositoryContainerProtocol) {
+    public static func initialize(_ initialized: DIRepositoryContainerType) {
         self.initialized = initialized
     }
 }

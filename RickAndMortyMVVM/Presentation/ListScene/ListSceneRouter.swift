@@ -17,7 +17,7 @@ enum ListSceneRoute: String {
     case foo
 }
 
-class ListSceneRouter: ListSceneRouterType {
+final class ListSceneRouter: ListSceneRouterType {
     weak var context: UIViewController?
 
     func route(to route: ListSceneRoute, parameters: Any?...) {

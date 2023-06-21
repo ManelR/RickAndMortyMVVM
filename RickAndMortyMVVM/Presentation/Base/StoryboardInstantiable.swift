@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-public protocol StoryboardInstantiable: NSObjectProtocol {
+public protocol StoryboardInstantiable: AnyObject {
     associatedtype NewViewController
     static var defaultFileName: String { get }
     static func instantiateViewController(_ bundle: Bundle?) -> NewViewController

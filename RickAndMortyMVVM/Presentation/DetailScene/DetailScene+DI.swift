@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension DIRepositoryContainerProtocol {
+extension DIRepositoryContainerType {
     func resolve() -> any DetailSceneRouterType {
         return DetailSceneRouter()
     }

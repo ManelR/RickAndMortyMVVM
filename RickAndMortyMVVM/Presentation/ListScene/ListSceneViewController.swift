@@ -11,12 +11,15 @@ import Combine
 
 class ListSceneViewController: UIViewController, StoryboardInstantiable {
     // MARK: - IBOUTLETS
-
+    @IBOutlet weak var tableView: UITableView!
+    
     // MARK: - VARs
     private var subscriptions: Set<AnyCancellable> = []
 
     internal var router: any ListSceneRouterType = DIRepository.shared.resolve()
-    internal var viewModel: ListSceneViewModelType = DIRepository.shared.resolve()
+    internal var viewModel: any ListSceneViewModelType = DIRepository.shared.resolve()
+
+    private var tableDataSource: [CharacterDomain] = []
 
     // MARK: - Init
     init() {
@@ -38,8 +41,12 @@ class ListSceneViewController: UIViewController, StoryboardInstantiable {
 
     func bind() {
         subscriptions = [
-            // TODO:
-            // Ex: self.viewModel.backgroundColor.assign(to: \.backgroundColor, on: self.view)
+            self.viewModel.characters
+                .sink {
+                if let data = $0 {
+                    self.updateTableDataSource(data)
+                }
+            }
         ]
     }
 
@@ -51,5 +58,23 @@ extension ListSceneViewController {
     private func linkModelAndRouter() {
         self.router.context = self
         self.viewModel.router = self.router
+    }
+
+    private func updateTableDataSource(_ newDataSource: [CharacterDomain]) {
+        self.tableDataSource = newDataSource
+        self.tableView.reloadData()
+    }
+}
+
+extension ListSceneViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.tableDataSource.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell(style: .default, reuseIdentifier: "test")
+        let item = self.tableDataSource[indexPath.row]
+        cell.textLabel?.text = item.name
+        return cell
     }
 }

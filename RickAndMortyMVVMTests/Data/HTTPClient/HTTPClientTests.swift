@@ -8,7 +8,7 @@
 import XCTest
 @testable import RickAndMortyMVVM
 
-final class HTTPClientTests: XCTestCase {
+final class HTTPClientTests: BaseXCTestCase {
 
     private var sut: HTTPClient!
 

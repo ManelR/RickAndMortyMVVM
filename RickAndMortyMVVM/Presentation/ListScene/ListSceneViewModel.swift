@@ -15,7 +15,7 @@ protocol ListSceneViewModelInput {
 
 // OUTPUT DEFINITION
 protocol ListSceneViewModelOutput {
-
+    var characters: Published<[CharacterDomain]?>.Publisher { get }
 }
 
 // PROTOCOL COMPOSITION
@@ -24,22 +24,41 @@ protocol ListSceneViewModelType: ListSceneViewModelInput, ListSceneViewModelOutp
 }
 
 // DEFAULT MODEL IMPLEMENTATION
-class ListSceneViewModel: ListSceneViewModelType {
-    weak var router: (any ListSceneRouterType)?
+final class ListSceneViewModel: ListSceneViewModelType {
+    internal weak var router: (any ListSceneRouterType)?
+    private var characterRepository: CharacterRepositoryType
     var subscriptions = Set<AnyCancellable>()
 
-    init(router: (any ListSceneRouterType)? = DIRepository.shared.resolve()) {
-        self.router = router
-    }
-
     // MARK: - OUTPUT IMPLEMENTATION
+    @Published var vCharacters: [CharacterDomain]?
+    var characters: Published<[CharacterDomain]?>.Publisher { $vCharacters }
 
+    init(router: (any ListSceneRouterType)? = DIRepository.shared.resolve(),
+         characterRepository: CharacterRepositoryType = DIRepository.shared.resolve()) {
+        self.router = router
+        self.characterRepository = characterRepository
+    }
 }
 
 // MARK: - INPUT IMPLEMENTATION
-
 extension ListSceneViewModel {
     func viewDidLoad() {
-        // TODO:
+        self.requestDataAndNotifyView()
+    }
+}
+
+// MARK: - PRIVATE METHODS
+extension ListSceneViewModel {
+    func requestDataAndNotifyView() {
+        Task {
+            do {
+                let response = try await self.characterRepository.getCharacters()
+                await MainActor.run {
+                    self.vCharacters = response
+                }
+            } catch {
+                // TODO: Error
+            }
+        }
     }
 }
