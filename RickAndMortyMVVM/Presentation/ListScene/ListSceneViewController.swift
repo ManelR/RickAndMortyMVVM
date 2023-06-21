@@ -15,6 +15,7 @@ class ListSceneViewController: UIViewController, StoryboardInstantiable {
     
     // MARK: - VARs
     private var subscriptions: Set<AnyCancellable> = []
+    private let tableViewCellIdentifier = "CustomTableViewCell"
 
     internal var router: any ListSceneRouterType = DIRepository.shared.resolve()
     internal var viewModel: any ListSceneViewModelType = DIRepository.shared.resolve()
@@ -36,6 +37,7 @@ class ListSceneViewController: UIViewController, StoryboardInstantiable {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.bind()
+        self.configView()
         self.viewModel.viewDidLoad()
     }
 
@@ -64,6 +66,17 @@ extension ListSceneViewController {
         self.tableDataSource = newDataSource
         self.tableView.reloadData()
     }
+
+    private func configView() {
+        self.registerCustomTableCell()
+    }
+
+    private func registerCustomTableCell() {
+        let customCell = UINib(nibName: "ListSceneTableViewCell",
+                                  bundle: nil)
+        self.tableView.register(customCell,
+                                forCellReuseIdentifier: tableViewCellIdentifier)
+    }
 }
 
 extension ListSceneViewController: UITableViewDelegate, UITableViewDataSource {
@@ -72,9 +85,13 @@ extension ListSceneViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .default, reuseIdentifier: "test")
-        let item = self.tableDataSource[indexPath.row]
-        cell.textLabel?.text = item.name
-        return cell
+        if let cell = tableView.dequeueReusableCell(withIdentifier: tableViewCellIdentifier)
+            as? ListSceneTableViewCell {
+            let item = self.tableDataSource[indexPath.row]
+            cell.configView(from: item)
+            return cell
+        }
+
+        return UITableViewCell()
     }
 }

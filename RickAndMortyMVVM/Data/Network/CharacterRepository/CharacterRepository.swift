@@ -32,6 +32,7 @@ final class CharacterRepository: CharacterRepositoryType {
             let domain = result.results.map { CharacterDomain(from: $0) }
             return domain
         } catch {
+            print(error.localizedDescription)
             throw HTTPError.JSONParseError
         }
     }

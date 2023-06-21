@@ -44,6 +44,11 @@
 		17D2570B2A438AC9002AE10B /* MockDIRepositoryContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D2570A2A438AC9002AE10B /* MockDIRepositoryContainer.swift */; };
 		17D2570D2A438B6B002AE10B /* StubCharacterRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D2570C2A438B6B002AE10B /* StubCharacterRepository.swift */; };
 		17D257102A438C1F002AE10B /* BaseXCTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D2570F2A438C1F002AE10B /* BaseXCTestCase.swift */; };
+		17D257162A439689002AE10B /* ListSceneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D257142A439689002AE10B /* ListSceneTableViewCell.swift */; };
+		17D257172A439689002AE10B /* ListSceneTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17D257152A439689002AE10B /* ListSceneTableViewCell.xib */; };
+		17D257192A439F7E002AE10B /* ListSceneTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D257182A439F7E002AE10B /* ListSceneTableViewCellModel.swift */; };
+		17D2571B2A43A035002AE10B /* ListSceneTableViewCell+DI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D2571A2A43A035002AE10B /* ListSceneTableViewCell+DI.swift */; };
+		17D2571E2A43A547002AE10B /* ListSceneTableViewCellModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D2571D2A43A547002AE10B /* ListSceneTableViewCellModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +111,11 @@
 		17D2570A2A438AC9002AE10B /* MockDIRepositoryContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDIRepositoryContainer.swift; sourceTree = "<group>"; };
 		17D2570C2A438B6B002AE10B /* StubCharacterRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubCharacterRepository.swift; sourceTree = "<group>"; };
 		17D2570F2A438C1F002AE10B /* BaseXCTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseXCTestCase.swift; sourceTree = "<group>"; };
+		17D257142A439689002AE10B /* ListSceneTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSceneTableViewCell.swift; sourceTree = "<group>"; };
+		17D257152A439689002AE10B /* ListSceneTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListSceneTableViewCell.xib; sourceTree = "<group>"; };
+		17D257182A439F7E002AE10B /* ListSceneTableViewCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSceneTableViewCellModel.swift; sourceTree = "<group>"; };
+		17D2571A2A43A035002AE10B /* ListSceneTableViewCell+DI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListSceneTableViewCell+DI.swift"; sourceTree = "<group>"; };
+		17D2571D2A43A547002AE10B /* ListSceneTableViewCellModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSceneTableViewCellModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,6 +246,7 @@
 		176D88DF2A42EF7F00AB2E05 /* ListScene */ = {
 			isa = PBXGroup;
 			children = (
+				17D257132A4395E8002AE10B /* Cells */,
 				176D88E12A42EFA000AB2E05 /* ListScene.storyboard */,
 				176D88E22A42EFA000AB2E05 /* ListSceneRouter.swift */,
 				176D88E32A42EFA000AB2E05 /* ListSceneViewController.swift */,
@@ -368,6 +379,7 @@
 		17D257062A438584002AE10B /* ListScene */ = {
 			isa = PBXGroup;
 			children = (
+				17D2571C2A43A536002AE10B /* Cells */,
 				17D257072A438594002AE10B /* ListSceneViewModelTests.swift */,
 			);
 			path = ListScene;
@@ -387,6 +399,25 @@
 				17D2570F2A438C1F002AE10B /* BaseXCTestCase.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		17D257132A4395E8002AE10B /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				17D257142A439689002AE10B /* ListSceneTableViewCell.swift */,
+				17D257152A439689002AE10B /* ListSceneTableViewCell.xib */,
+				17D257182A439F7E002AE10B /* ListSceneTableViewCellModel.swift */,
+				17D2571A2A43A035002AE10B /* ListSceneTableViewCell+DI.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		17D2571C2A43A536002AE10B /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				17D2571D2A43A547002AE10B /* ListSceneTableViewCellModelTests.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -496,6 +527,7 @@
 			files = (
 				176D88B62A42EABA00AB2E05 /* LaunchScreen.storyboard in Resources */,
 				176D88E52A42EFA000AB2E05 /* ListScene.storyboard in Resources */,
+				17D257172A439689002AE10B /* ListSceneTableViewCell.xib in Resources */,
 				176D88ED2A42EFD200AB2E05 /* DetailScene.storyboard in Resources */,
 				176D88B32A42EABA00AB2E05 /* Assets.xcassets in Resources */,
 			);
@@ -550,10 +582,13 @@
 				176D88E72A42EFA000AB2E05 /* ListSceneViewController.swift in Sources */,
 				176D88EF2A42EFD200AB2E05 /* DetailSceneViewController.swift in Sources */,
 				176D89082A435C7300AB2E05 /* CharacterRepositoryType.swift in Sources */,
+				17D257192A439F7E002AE10B /* ListSceneTableViewCellModel.swift in Sources */,
 				176D890E2A4360BB00AB2E05 /* CharacterDomain.swift in Sources */,
 				176D890A2A435C8B00AB2E05 /* CharacterRepository.swift in Sources */,
 				176D89152A43792E00AB2E05 /* DIRepositoryContainer.swift in Sources */,
 				176D890C2A435DEA00AB2E05 /* CharacterResponse.swift in Sources */,
+				17D2571B2A43A035002AE10B /* ListSceneTableViewCell+DI.swift in Sources */,
+				17D257162A439689002AE10B /* ListSceneTableViewCell.swift in Sources */,
 				176D891D2A437ABE00AB2E05 /* DetailScene+DI.swift in Sources */,
 				176D89172A43793900AB2E05 /* DIRepository.swift in Sources */,
 				176D88AA2A42EAB700AB2E05 /* AppDelegate.swift in Sources */,
@@ -575,6 +610,7 @@
 			files = (
 				176D89112A43787500AB2E05 /* CharacterRepositoryTests.swift in Sources */,
 				176D89222A437EC400AB2E05 /* MockHTTPClient.swift in Sources */,
+				17D2571E2A43A547002AE10B /* ListSceneTableViewCellModelTests.swift in Sources */,
 				176D89022A43540900AB2E05 /* MockURLProtocol.swift in Sources */,
 				17D2570D2A438B6B002AE10B /* StubCharacterRepository.swift in Sources */,
 				17D257102A438C1F002AE10B /* BaseXCTestCase.swift in Sources */,

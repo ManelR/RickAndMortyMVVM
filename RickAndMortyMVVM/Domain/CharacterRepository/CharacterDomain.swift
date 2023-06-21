@@ -10,11 +10,15 @@ import Foundation
 struct CharacterDomain {
     var id: Int
     var name: String
+    var species: String
+    var isAlive: Bool
 }
 
 extension CharacterDomain {
-    init(from: CharacterResponse.Character) {
-        self.id = from.id
-        self.name = from.name
+    init(from character: CharacterResponse.Character) {
+        self.id = character.id
+        self.name = character.name
+        self.species = character.species
+        self.isAlive = character.status != .dead
     }
 }
