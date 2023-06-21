@@ -51,6 +51,7 @@
 		17D257212A43A74E002AE10B /* DownloadImageRepositoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D257202A43A74E002AE10B /* DownloadImageRepositoryType.swift */; };
 		17D257242A43A774002AE10B /* DownloadImageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D257232A43A774002AE10B /* DownloadImageRepository.swift */; };
 		17D257262A43AEE5002AE10B /* SpyListSceneRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D257252A43AEE5002AE10B /* SpyListSceneRouter.swift */; };
+		17D257282A43B64C002AE10B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 17D257272A43B64C002AE10B /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +121,7 @@
 		17D257202A43A74E002AE10B /* DownloadImageRepositoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadImageRepositoryType.swift; sourceTree = "<group>"; };
 		17D257232A43A774002AE10B /* DownloadImageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadImageRepository.swift; sourceTree = "<group>"; };
 		17D257252A43AEE5002AE10B /* SpyListSceneRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyListSceneRouter.swift; sourceTree = "<group>"; };
+		17D257272A43B64C002AE10B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 		176D889D2A42EAB700AB2E05 = {
 			isa = PBXGroup;
 			children = (
+				17D257272A43B64C002AE10B /* README.md */,
 				17D257042A438353002AE10B /* RickAndMortyMVVM.xctestplan */,
 				176D88A82A42EAB700AB2E05 /* RickAndMortyMVVM */,
 				176D88BF2A42EABA00AB2E05 /* RickAndMortyMVVMTests */,
@@ -559,6 +562,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17D257282A43B64C002AE10B /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
