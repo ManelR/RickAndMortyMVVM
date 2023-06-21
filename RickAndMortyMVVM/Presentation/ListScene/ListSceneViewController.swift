@@ -94,4 +94,8 @@ extension ListSceneViewController: UITableViewDelegate, UITableViewDataSource {
 
         return UITableViewCell()
     }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.viewModel.didSelectRow(indexPath.row)
+    }
 }

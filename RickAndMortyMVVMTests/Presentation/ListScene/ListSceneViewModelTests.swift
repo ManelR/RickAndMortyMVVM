@@ -64,4 +64,15 @@ final class ListSceneViewModelTests: BaseXCTestCase {
 
         waitForExpectations(timeout: 10)
     }
+
+    func test_didSelectRow_MoveToDetail() {
+        // Given
+        let router = SpyListSceneRouter()
+        self.sut.router = router
+        // When
+        self.sut.didSelectRow(0)
+        // Then
+        XCTAssertEqual(router.countRoute, 1)
+        XCTAssertEqual(router.route, .detail)
+    }
 }

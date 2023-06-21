@@ -18,3 +18,17 @@ protocol RouterType: AnyObject {
         parameters: Any?...
     )
 }
+
+extension RouterType {
+    internal func route(next: UIViewController, animated: Bool = true) {
+        if let navigation = self.context?.navigationController {
+            route(navigation: navigation, next: next, animated: animated)
+        } else {
+            print("Error: No navigation controller provided")
+        }
+    }
+    
+    internal func route(navigation: UINavigationController, next: UIViewController, animated: Bool = true) {
+        navigation.pushViewController(next, animated: animated)
+    }
+}

@@ -11,6 +11,7 @@ import Combine
 // INPUT DEFINITION
 protocol DetailSceneViewModelInput {
     func viewDidLoad()
+    func setCharacter(_ : CharacterDomain)
 }
 
 // OUTPUT DEFINITION
@@ -25,8 +26,9 @@ protocol DetailSceneViewModelType: DetailSceneViewModelInput, DetailSceneViewMod
 
 // DEFAULT MODEL IMPLEMENTATION
 class DetailSceneViewModel: DetailSceneViewModelType {
-    weak var router: (any DetailSceneRouterType)?
-    var subscriptions = Set<AnyCancellable>()
+    internal weak var router: (any DetailSceneRouterType)?
+    private var subscriptions = Set<AnyCancellable>()
+    private var character: CharacterDomain?
 
     init(router: (any DetailSceneRouterType)? = DIRepository.shared.resolve()) {
         self.router = router
@@ -41,5 +43,10 @@ class DetailSceneViewModel: DetailSceneViewModelType {
 extension DetailSceneViewModel {
     func viewDidLoad() {
         // TODO:
+        print(character?.name)
+    }
+
+    func setCharacter(_ character: CharacterDomain) {
+        self.character = character
     }
 }

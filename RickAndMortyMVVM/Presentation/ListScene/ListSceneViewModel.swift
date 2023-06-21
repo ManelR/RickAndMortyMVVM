@@ -11,6 +11,7 @@ import Combine
 // INPUT DEFINITION
 protocol ListSceneViewModelInput {
     func viewDidLoad()
+    func didSelectRow(_ index: Int)
 }
 
 // OUTPUT DEFINITION
@@ -30,8 +31,8 @@ final class ListSceneViewModel: ListSceneViewModelType {
     var subscriptions = Set<AnyCancellable>()
 
     // MARK: - OUTPUT IMPLEMENTATION
-    @Published var vCharacters: [CharacterDomain]?
-    var characters: Published<[CharacterDomain]?>.Publisher { $vCharacters }
+    @Published var pCharacters: [CharacterDomain]?
+    var characters: Published<[CharacterDomain]?>.Publisher { $pCharacters }
 
     init(router: (any ListSceneRouterType)? = DIRepository.shared.resolve(),
          characterRepository: CharacterRepositoryType = DIRepository.shared.resolve()) {
@@ -45,6 +46,16 @@ extension ListSceneViewModel {
     func viewDidLoad() {
         self.requestDataAndNotifyView()
     }
+
+    func didSelectRow(_ index: Int) {
+        // Move to details
+        if pCharacters?.count ?? 0 > index,
+           let character = pCharacters?[index] {
+            self.router?.route(to: .detail, parameters: character)
+        } else {
+            self.router?.route(to: .detail, parameters: nil)
+        }
+    }
 }
 
 // MARK: - PRIVATE METHODS
@@ -54,7 +65,7 @@ extension ListSceneViewModel {
             do {
                 let response = try await self.characterRepository.getCharacters()
                 await MainActor.run {
-                    self.vCharacters = response
+                    self.pCharacters = response
                 }
             } catch {
                 // TODO: Error

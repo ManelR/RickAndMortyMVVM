@@ -8,13 +8,13 @@
 import Foundation
 import UIKit
 
-protocol ListSceneRouterType: RouterType {
+protocol ListSceneRouterType: RouterType where RouterEnum == ListSceneRoute {
 
 }
 
 // Routes from Login
 enum ListSceneRoute: String {
-    case foo
+    case detail
 }
 
 final class ListSceneRouter: ListSceneRouterType {
@@ -23,9 +23,12 @@ final class ListSceneRouter: ListSceneRouterType {
     func route(to route: ListSceneRoute, parameters: Any?...) {
 
         switch route {
-        case .foo:
-            // TODO:
-            print("Go to foo")
+        case .detail:
+            let destination = DetailSceneViewController.instantiateViewController()
+            if let character = parameters[0] as? CharacterDomain {
+                destination.setCharacter(character)
+            }
+            self.route(next: destination)
         }
     }
 }

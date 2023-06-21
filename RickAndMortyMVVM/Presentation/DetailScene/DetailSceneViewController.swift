@@ -43,6 +43,10 @@ class DetailSceneViewController: UIViewController, StoryboardInstantiable {
         ]
     }
 
+    func setCharacter(_ character: CharacterDomain) {
+        self.viewModel.setCharacter(character)
+    }
+
     // MARK: - ACTIONS
 
 }

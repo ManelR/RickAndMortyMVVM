@@ -51,6 +51,7 @@
 		17D2571E2A43A547002AE10B /* ListSceneTableViewCellModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D2571D2A43A547002AE10B /* ListSceneTableViewCellModelTests.swift */; };
 		17D257212A43A74E002AE10B /* DownloadImageRepositoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D257202A43A74E002AE10B /* DownloadImageRepositoryType.swift */; };
 		17D257242A43A774002AE10B /* DownloadImageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D257232A43A774002AE10B /* DownloadImageRepository.swift */; };
+		17D257262A43AEE5002AE10B /* SpyListSceneRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D257252A43AEE5002AE10B /* SpyListSceneRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +121,7 @@
 		17D2571D2A43A547002AE10B /* ListSceneTableViewCellModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSceneTableViewCellModelTests.swift; sourceTree = "<group>"; };
 		17D257202A43A74E002AE10B /* DownloadImageRepositoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadImageRepositoryType.swift; sourceTree = "<group>"; };
 		17D257232A43A774002AE10B /* DownloadImageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadImageRepository.swift; sourceTree = "<group>"; };
+		17D257252A43AEE5002AE10B /* SpyListSceneRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyListSceneRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -387,6 +389,7 @@
 			children = (
 				17D2571C2A43A536002AE10B /* Cells */,
 				17D257072A438594002AE10B /* ListSceneViewModelTests.swift */,
+				17D257252A43AEE5002AE10B /* SpyListSceneRouter.swift */,
 			);
 			path = ListScene;
 			sourceTree = "<group>";
@@ -640,6 +643,7 @@
 				17D257102A438C1F002AE10B /* BaseXCTestCase.swift in Sources */,
 				176D89042A43542100AB2E05 /* HTTPClientTests.swift in Sources */,
 				176D891F2A437BF600AB2E05 /* SpyHTTPClient.swift in Sources */,
+				17D257262A43AEE5002AE10B /* SpyListSceneRouter.swift in Sources */,
 				17D2570B2A438AC9002AE10B /* MockDIRepositoryContainer.swift in Sources */,
 				17D257082A438594002AE10B /* ListSceneViewModelTests.swift in Sources */,
 			);
