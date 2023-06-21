@@ -22,7 +22,7 @@ final class ListSceneTableViewCellModelTests: BaseXCTestCase {
 
     func test_configView_Publish_Correct_titleText() {
         // Given
-        let character = CharacterDomain(id: 1, name: "test", species: "test 2", isAlive: true)
+        let character = CharacterDomain(id: 1, name: "test", species: "test 2", isAlive: true, image: "url")
         var result: String = ""
         let expectation = self.expectation(description: "configView")
         expectation.assertForOverFulfill = false // used to prevent all events from combine
@@ -47,7 +47,7 @@ final class ListSceneTableViewCellModelTests: BaseXCTestCase {
 
     func test_configView_Publish_Correct_secondaryText() {
         // Given
-        let character = CharacterDomain(id: 1, name: "test", species: "test 2", isAlive: true)
+        let character = CharacterDomain(id: 1, name: "test", species: "test 2", isAlive: true, image: "url")
         var result: String = ""
         let expectation = self.expectation(description: "configView")
         expectation.assertForOverFulfill = false // used to prevent all events from combine
@@ -72,7 +72,7 @@ final class ListSceneTableViewCellModelTests: BaseXCTestCase {
 
     func test_configView_Publish_Correct_showAlive() {
         // Given
-        let character = CharacterDomain(id: 1, name: "test", species: "", isAlive: true)
+        let character = CharacterDomain(id: 1, name: "test", species: "", isAlive: true, image: "url")
         var result: Bool = false
         let expectation = self.expectation(description: "configView")
         expectation.assertForOverFulfill = false // used to prevent all events from combine

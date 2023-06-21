@@ -34,11 +34,37 @@ final class ListSceneTableViewCellModel: ListSceneTableViewCellModelType {
     @Published var pImageData: Data?
     var imageData: Published<Data?>.Publisher { $pImageData }
 
+    private var downloadImageRepository: DownloadImageRepositoryType
+    private var currentTask: Task<Void, Error>?
+
+    init(downloadImageRepository: DownloadImageRepositoryType = DIRepository.shared.resolve()) {
+        self.downloadImageRepository = downloadImageRepository
+    }
 
     func configView(from character: CharacterDomain) {
         self.pTitle = character.name
         self.pSecondaryText = character.species
         self.pShowAlive = character.isAlive
-        
+        self.downloadImage(image: character.image)
+    }
+
+    private func downloadImage(image: String) {
+        if let currentTask = currentTask {
+            currentTask.cancel()
+        }
+        currentTask = Task {
+            do {
+                let data = try await self.downloadImageRepository.downloadImage(url: image)
+                if Task.isCancelled { return }
+                await MainActor.run {
+                    self.pImageData = data
+                }
+            } catch {
+                if Task.isCancelled { return }
+                await MainActor.run {
+                    self.pImageData = nil
+                }
+            }
+        }
     }
 }

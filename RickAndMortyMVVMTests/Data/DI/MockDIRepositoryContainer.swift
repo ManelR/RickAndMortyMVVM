@@ -14,6 +14,11 @@ final class MockDIRespositoryContainer: DIRepositoryContainerType {
         return StubCharacterRepository()
     }
 
+    func resolve() -> DownloadImageRepositoryType {
+        // TODO:
+        return DownloadImageRepository()
+    }
+
     // MARK: - HTTPClient
     func resolve() -> HTTPClientType {
         return SpyHTTPClient()

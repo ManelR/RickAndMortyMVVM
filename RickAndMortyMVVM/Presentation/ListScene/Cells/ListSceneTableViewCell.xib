@@ -14,7 +14,7 @@
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="70" id="KGk-i7-Jjw" customClass="ListSceneTableViewCell" customModule="RickAndMortyMVVM" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="293.66666666666669" height="70"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
@@ -52,7 +52,7 @@
                     <constraint firstItem="YWB-kd-AJb" firstAttribute="leading" secondItem="bRB-B1-91q" secondAttribute="leading" id="WkC-Bc-CEr"/>
                     <constraint firstItem="ePJ-P1-dNU" firstAttribute="top" secondItem="tJl-UH-2or" secondAttribute="top" id="Wmc-Nu-lx7"/>
                     <constraint firstItem="tJl-UH-2or" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="cP4-C9-Fac"/>
-                    <constraint firstAttribute="bottom" secondItem="tJl-UH-2or" secondAttribute="bottom" constant="10" id="fCB-ow-nnR"/>
+                    <constraint firstAttribute="bottom" secondItem="tJl-UH-2or" secondAttribute="bottom" priority="750" constant="10" id="fCB-ow-nnR"/>
                     <constraint firstItem="ePJ-P1-dNU" firstAttribute="bottom" secondItem="tJl-UH-2or" secondAttribute="bottom" id="kw4-DT-uKS"/>
                     <constraint firstItem="ePJ-P1-dNU" firstAttribute="leading" secondItem="tJl-UH-2or" secondAttribute="leading" id="nPF-TI-zdS"/>
                     <constraint firstItem="tJl-UH-2or" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="vR5-wm-9oo"/>

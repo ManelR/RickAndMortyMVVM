@@ -12,6 +12,7 @@ struct CharacterDomain {
     var name: String
     var species: String
     var isAlive: Bool
+    var image: String
 }
 
 extension CharacterDomain {
@@ -20,5 +21,6 @@ extension CharacterDomain {
         self.name = character.name
         self.species = character.species
         self.isAlive = character.status != .dead
+        self.image = character.image
     }
 }

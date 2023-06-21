@@ -13,6 +13,10 @@ final class DIRepositoryContainer: DIRepositoryContainerType {
         return CharacterRepository()
     }
 
+    func resolve() -> DownloadImageRepositoryType {
+        return DownloadImageRepository()
+    }
+
     // MARK: - HTTPClient
     func resolve() -> HTTPClientType {
         return HTTPClient(session: .shared)
