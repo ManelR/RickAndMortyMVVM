@@ -24,8 +24,6 @@
       }
     },
     {
-      "enabled" : false,
-      "parallelizable" : true,
       "target" : {
         "containerPath" : "container:RickAndMortyMVVM.xcodeproj",
         "identifier" : "176D88C52A42EABA00AB2E05",

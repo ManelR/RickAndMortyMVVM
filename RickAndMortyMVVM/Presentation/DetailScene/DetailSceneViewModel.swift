@@ -11,7 +11,7 @@ import Combine
 // INPUT DEFINITION
 protocol DetailSceneViewModelInput {
     func viewDidLoad()
-    func setCharacter(_ : CharacterDomain)
+    func setCharacter(_: CharacterDomain)
 }
 
 // OUTPUT DEFINITION

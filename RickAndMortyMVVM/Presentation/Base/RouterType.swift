@@ -27,7 +27,7 @@ extension RouterType {
             print("Error: No navigation controller provided")
         }
     }
-    
+
     internal func route(navigation: UINavigationController, next: UIViewController, animated: Bool = true) {
         navigation.pushViewController(next, animated: animated)
     }

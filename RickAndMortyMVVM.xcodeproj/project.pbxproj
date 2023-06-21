@@ -12,7 +12,6 @@
 		176D88B32A42EABA00AB2E05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 176D88B22A42EABA00AB2E05 /* Assets.xcassets */; };
 		176D88B62A42EABA00AB2E05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 176D88B42A42EABA00AB2E05 /* LaunchScreen.storyboard */; };
 		176D88CB2A42EABA00AB2E05 /* RickAndMortyMVVMUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176D88CA2A42EABA00AB2E05 /* RickAndMortyMVVMUITests.swift */; };
-		176D88CD2A42EABA00AB2E05 /* RickAndMortyMVVMUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176D88CC2A42EABA00AB2E05 /* RickAndMortyMVVMUITestsLaunchTests.swift */; };
 		176D88E52A42EFA000AB2E05 /* ListScene.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 176D88E12A42EFA000AB2E05 /* ListScene.storyboard */; };
 		176D88E62A42EFA000AB2E05 /* ListSceneRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176D88E22A42EFA000AB2E05 /* ListSceneRouter.swift */; };
 		176D88E72A42EFA000AB2E05 /* ListSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176D88E32A42EFA000AB2E05 /* ListSceneViewController.swift */; };
@@ -81,7 +80,6 @@
 		176D88BC2A42EABA00AB2E05 /* RickAndMortyMVVMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RickAndMortyMVVMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		176D88C62A42EABA00AB2E05 /* RickAndMortyMVVMUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RickAndMortyMVVMUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		176D88CA2A42EABA00AB2E05 /* RickAndMortyMVVMUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickAndMortyMVVMUITests.swift; sourceTree = "<group>"; };
-		176D88CC2A42EABA00AB2E05 /* RickAndMortyMVVMUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickAndMortyMVVMUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		176D88E12A42EFA000AB2E05 /* ListScene.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ListScene.storyboard; sourceTree = "<group>"; };
 		176D88E22A42EFA000AB2E05 /* ListSceneRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSceneRouter.swift; sourceTree = "<group>"; };
 		176D88E32A42EFA000AB2E05 /* ListSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSceneViewController.swift; sourceTree = "<group>"; };
@@ -196,7 +194,6 @@
 			isa = PBXGroup;
 			children = (
 				176D88CA2A42EABA00AB2E05 /* RickAndMortyMVVMUITests.swift */,
-				176D88CC2A42EABA00AB2E05 /* RickAndMortyMVVMUITestsLaunchTests.swift */,
 			);
 			path = RickAndMortyMVVMUITests;
 			sourceTree = "<group>";
@@ -654,7 +651,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				176D88CB2A42EABA00AB2E05 /* RickAndMortyMVVMUITests.swift in Sources */,
-				176D88CD2A42EABA00AB2E05 /* RickAndMortyMVVMUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
