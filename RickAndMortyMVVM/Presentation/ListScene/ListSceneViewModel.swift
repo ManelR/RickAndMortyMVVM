@@ -28,6 +28,10 @@ class ListSceneViewModel: ListSceneViewModelType {
     weak var router: (any ListSceneRouterType)?
     var subscriptions = Set<AnyCancellable>()
 
+    init(router: (any ListSceneRouterType)? = DIRepository.shared.resolve()) {
+        self.router = router
+    }
+
     // MARK: - OUTPUT IMPLEMENTATION
 
 }

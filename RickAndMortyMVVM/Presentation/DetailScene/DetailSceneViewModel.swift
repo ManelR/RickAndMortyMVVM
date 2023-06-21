@@ -28,6 +28,10 @@ class DetailSceneViewModel: DetailSceneViewModelType {
     weak var router: (any DetailSceneRouterType)?
     var subscriptions = Set<AnyCancellable>()
 
+    init(router: (any DetailSceneRouterType)? = DIRepository.shared.resolve()) {
+        self.router = router
+    }
+
     // MARK: - OUTPUT IMPLEMENTATION
 
 }

@@ -15,8 +15,8 @@ class DetailSceneViewController: UIViewController, StoryboardInstantiable {
     // MARK: - VARs
     private var subscriptions: Set<AnyCancellable> = []
 
-    internal var router: any DetailSceneRouterType = DetailSceneRouter()
-    internal var viewModel: DetailSceneViewModelType = DetailSceneViewModel()
+    internal var router: any DetailSceneRouterType = DIRepository.shared.resolve()
+    internal var viewModel: DetailSceneViewModelType = DIRepository.shared.resolve()
 
     // MARK: - Init
     init() {

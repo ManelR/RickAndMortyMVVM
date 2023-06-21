@@ -15,8 +15,8 @@ class ListSceneViewController: UIViewController, StoryboardInstantiable {
     // MARK: - VARs
     private var subscriptions: Set<AnyCancellable> = []
 
-    internal var router: any ListSceneRouterType = ListSceneRouter()
-    internal var viewModel: ListSceneViewModelType = ListSceneViewModel()
+    internal var router: any ListSceneRouterType = DIRepository.shared.resolve()
+    internal var viewModel: ListSceneViewModelType = DIRepository.shared.resolve()
 
     // MARK: - Init
     init() {
@@ -34,6 +34,16 @@ class ListSceneViewController: UIViewController, StoryboardInstantiable {
         super.viewDidLoad()
         self.bind()
         self.viewModel.viewDidLoad()
+        let repository: CharacterRepositoryType = DIRepository.shared.resolve()
+        Task {
+            do {
+                let result = try await repository.getCharacters()
+                print(result)
+            } catch {
+                print(error)
+            }
+
+        }
     }
 
     func bind() {
