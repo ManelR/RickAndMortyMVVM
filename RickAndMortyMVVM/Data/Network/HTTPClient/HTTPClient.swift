@@ -17,6 +17,7 @@ class HTTPClient: HTTPClientType {
     func send(request: URLRequest) async throws -> Data? {
         var result: (data: Data?, response: URLResponse?)
         do {
+            print("\(getName()): REQUEST \(request.httpMethod ?? "?") - \(request.url?.absoluteString ?? "?")")
             if #available(iOS 15.0, *) {
                 result = try await self.makeRequest(request: request)
             } else {

@@ -12,6 +12,7 @@ import Combine
 protocol ListSceneViewModelInput {
     func viewDidLoad()
     func didSelectRow(_ index: Int)
+    func filterList(_ filter: String)
 }
 
 // OUTPUT DEFINITION
@@ -29,6 +30,8 @@ final class ListSceneViewModel: ListSceneViewModelType {
     internal weak var router: (any ListSceneRouterType)?
     private var characterRepository: CharacterRepositoryType
     var subscriptions = Set<AnyCancellable>()
+    private var filter: String?
+    private var requestTask: Task<Void, Error>?
 
     // MARK: - OUTPUT IMPLEMENTATION
     @Published var pCharacters: [CharacterDomain]?
@@ -56,14 +59,28 @@ extension ListSceneViewModel {
             self.router?.route(to: .detail, parameters: nil)
         }
     }
+
+    func filterList(_ filter: String) {
+        self.filter = filter
+        self.requestDataAndNotifyView(delay: 500_000_000)
+    }
 }
 
 // MARK: - PRIVATE METHODS
 extension ListSceneViewModel {
-    func requestDataAndNotifyView() {
-        Task {
+    func requestDataAndNotifyView(delay nanoseconds: Int? = 0) {
+        if let task = self.requestTask {
+            task.cancel()
+        }
+
+        self.requestTask = Task {
             do {
-                let response = try await self.characterRepository.getCharacters()
+                if let nanoseconds = nanoseconds {
+                    try await Task.sleep(nanoseconds: UInt64(nanoseconds))
+                }
+                try Task.checkCancellation()
+                let response = try await self.characterRepository.getCharacters(filter: self.filter)
+                try Task.checkCancellation()
                 await MainActor.run {
                     self.pCharacters = response
                 }

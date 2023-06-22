@@ -12,9 +12,13 @@ This project is an iOS app example that demonstrates the use of UIKit and storyb
 
 - Added a custom HTTPClient using async/await for network requests.
 
+- Added search controller to filter characters
+
 ## TODO:
 
 - Detail Scene
+
+- Characters pagination
 
 Thank you very much for your time reviewing my work 🚀
 

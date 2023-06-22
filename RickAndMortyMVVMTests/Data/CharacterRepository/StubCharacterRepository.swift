@@ -66,11 +66,18 @@ final class StubCharacterRepository: CharacterRepositoryType {
     }
     """
 
-    func getCharacters() async throws -> [CharacterDomain]? {
+    func getCharacters(filter: String?) async throws -> [CharacterDomain]? {
         let decode = JSONDecoder()
         do {
             let result = try decode.decode(CharacterResponse.self, from: StubCharacterRepository.fakeJSONResponse.data(using: .utf8)!)
-            return result.results.map { CharacterDomain(from: $0) }
+            return result.results
+                .filter {
+                    if let filter = filter {
+                        return $0.name.contains(filter)
+                    }
+                    return true
+                }
+                .map { CharacterDomain(from: $0) }
         }
     }
 }

@@ -8,5 +8,11 @@
 import Foundation
 
 protocol CharacterRepositoryType {
-    func getCharacters() async throws -> [CharacterDomain]?
+    func getCharacters(filter: String?) async throws -> [CharacterDomain]?
+}
+
+extension CharacterRepositoryType {
+    func getCharacters(filter: String? = nil) async throws -> [CharacterDomain]? {
+        return try await getCharacters(filter: filter)
+    }
 }

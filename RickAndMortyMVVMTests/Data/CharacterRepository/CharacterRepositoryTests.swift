@@ -32,6 +32,20 @@ final class CharacterRepositoryTests: BaseXCTestCase {
         }
     }
 
+    func test_getCharacters_Correct_URL_With_Filter() async throws {
+        // Given
+        let client = self.sut.client as! SpyHTTPClient
+        // When
+        do {
+            _ = try await self.sut.getCharacters(filter: "rick")
+            // Then
+            XCTAssertEqual(client.countSend, 1)
+            XCTAssertEqual(client.request?.url?.absoluteString, "https://rickandmortyapi.com/api/character?name=rick")
+        } catch {
+            XCTFail("This method should not throw")
+        }
+    }
+
     func test_getCharacters_Correct_Method() async throws {
         // Given
         let client = self.sut.client as! SpyHTTPClient

@@ -8,7 +8,7 @@
 import Foundation
 
 final class CharacterRepository: CharacterRepositoryType {
-    internal let url: URL?
+    internal var url: URL?
     internal var client: HTTPClientType
     internal var decoder: JSONDecoder
 
@@ -18,8 +18,8 @@ final class CharacterRepository: CharacterRepositoryType {
         self.url = URL(string: "https://rickandmortyapi.com/api/character")
     }
 
-    func getCharacters() async throws -> [CharacterDomain]? {
-        guard let request = self.createRequest() else {
+    func getCharacters(filter: String?) async throws -> [CharacterDomain]? {
+        guard let request = self.createRequest(filter: filter) else {
             throw HTTPError.createRequest
         }
 
@@ -39,10 +39,23 @@ final class CharacterRepository: CharacterRepositoryType {
 }
 
 extension CharacterRepository {
-    func createRequest() -> URLRequest? {
+    func createRequest(filter: String?) -> URLRequest? {
         if let url = url {
-            var request = URLRequest(url: url)
-            request.httpMethod = "GET"
+            var request: URLRequest?
+            var requestURL = url
+
+            if let filter = filter,
+               !filter.isEmpty {
+                var components = URLComponents(url: url,
+                                               resolvingAgainstBaseURL: false)
+                components?.queryItems = [URLQueryItem(name: "name", value: filter)]
+                if let componentsURL = components?.url {
+                    requestURL = componentsURL
+                }
+            }
+
+            request = URLRequest(url: requestURL)
+            request?.httpMethod = "GET"
             return request
         }
 

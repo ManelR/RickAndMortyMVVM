@@ -69,6 +69,7 @@ extension ListSceneViewController {
 
     private func configView() {
         self.registerCustomTableCell()
+        self.configSearchBar()
     }
 
     private func registerCustomTableCell() {
@@ -76,6 +77,15 @@ extension ListSceneViewController {
                                   bundle: nil)
         self.tableView.register(customCell,
                                 forCellReuseIdentifier: tableViewCellIdentifier)
+    }
+
+    private func configSearchBar() {
+        let searchController = UISearchController(searchResultsController: nil)
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search"
+        self.navigationItem.searchController = searchController
+        self.definesPresentationContext = true
     }
 }
 
@@ -97,5 +107,13 @@ extension ListSceneViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.viewModel.didSelectRow(indexPath.row)
+    }
+}
+
+extension ListSceneViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        print("Searching with: " + (searchController.searchBar.text ?? ""))
+        let searchText = (searchController.searchBar.text ?? "")
+        self.viewModel.filterList(searchText)
     }
 }
