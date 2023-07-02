@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+@MainActor
 protocol RouterType: AnyObject {
     associatedtype RouterEnum: RawRepresentable where RouterEnum.RawValue == String
 

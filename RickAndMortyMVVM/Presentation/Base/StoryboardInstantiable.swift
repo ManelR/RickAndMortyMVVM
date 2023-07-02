@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+@MainActor
 public protocol StoryboardInstantiable: AnyObject {
     associatedtype NewViewController
     static var defaultFileName: String { get }

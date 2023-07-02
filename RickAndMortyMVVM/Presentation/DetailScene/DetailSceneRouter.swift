@@ -20,6 +20,10 @@ enum DetailSceneRoute: String {
 class DetailSceneRouter: DetailSceneRouterType {
     weak var context: UIViewController?
 
+    nonisolated init() {
+        
+    }
+
     func route(to route: DetailSceneRoute, parameters: Any?...) {
 
         switch route {

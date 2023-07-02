@@ -21,7 +21,8 @@ final class ListSceneViewModelTests: BaseXCTestCase {
         cancellables = []
     }
 
-    func test_viewDidLoad_RequestData_And_Notify_View() {
+    @MainActor
+    func test_viewDidLoad_RequestData_And_Notify_View() async {
         // Given
         var result: [CharacterDomain] = []
         let expectation = self.expectation(description: "viewDidLoad")
@@ -37,9 +38,9 @@ final class ListSceneViewModelTests: BaseXCTestCase {
             .store(in: &cancellables)
 
         // When
-        self.sut.viewDidLoad()
+        await self.sut.viewDidLoad()
 
-        waitForExpectations(timeout: 10)
+        wait(for: [expectation], timeout: 10)
 
         // Then
         XCTAssertNotNil(result)
@@ -48,7 +49,8 @@ final class ListSceneViewModelTests: BaseXCTestCase {
         XCTAssertEqual(result[1].name, "Morty Smith")
     }
 
-    func test_viewDidLoad_RequestData_And_Notify_View_OnMainThread() {
+    @MainActor
+    func test_viewDidLoad_RequestData_And_Notify_View_OnMainThread() async {
         // Given
         let expectation = self.expectation(description: "viewDidLoad")
         expectation.assertForOverFulfill = false
@@ -60,23 +62,25 @@ final class ListSceneViewModelTests: BaseXCTestCase {
             .store(in: &cancellables)
 
         // When
-        self.sut.viewDidLoad()
+        await self.sut.viewDidLoad()
 
-        waitForExpectations(timeout: 10)
+        wait(for: [expectation], timeout: 10)
     }
 
-    func test_didSelectRow_MoveToDetail() {
+    @MainActor
+    func test_didSelectRow_MoveToDetail() async {
         // Given
         let router = SpyListSceneRouter()
         self.sut.router = router
         // When
-        self.sut.didSelectRow(0)
+        await self.sut.didSelectRow(0)
         // Then
         XCTAssertEqual(router.countRoute, 1)
         XCTAssertEqual(router.route, .detail)
     }
 
-    func test_filterList_RequestData_And_Notify_View() {
+    @MainActor
+    func test_filterList_RequestData_And_Notify_View() async {
         // Given
         var result: [CharacterDomain] = []
         let expectation = self.expectation(description: "filterList")
@@ -92,9 +96,9 @@ final class ListSceneViewModelTests: BaseXCTestCase {
             .store(in: &cancellables)
 
         // When
-        self.sut.filterList("Morty")
+        await self.sut.filterList("Morty")
 
-        waitForExpectations(timeout: 10)
+        wait(for: [expectation], timeout: 10)
 
         // Then
         XCTAssertNotNil(result)
@@ -102,7 +106,8 @@ final class ListSceneViewModelTests: BaseXCTestCase {
         XCTAssertEqual(result[0].name, "Morty Smith")
     }
 
-    func test_filterList_RequestData_And_Notify_View_OnMainThread() {
+    @MainActor
+    func test_filterList_RequestData_And_Notify_View_OnMainThread() async {
         // Given
         let expectation = self.expectation(description: "viewDidLoad")
         expectation.assertForOverFulfill = false
@@ -114,12 +119,13 @@ final class ListSceneViewModelTests: BaseXCTestCase {
             .store(in: &cancellables)
 
         // When
-        self.sut.filterList("Morty")
+        await self.sut.filterList("Morty")
 
-        waitForExpectations(timeout: 10)
+        wait(for: [expectation], timeout: 10)
     }
 
-    func test_filterList_RequestData_And_Notify_View_Has_Delay() {
+    @MainActor
+    func test_filterList_RequestData_And_Notify_View_Has_Delay() async {
         // Given
         var result: [CharacterDomain] = []
         var count: Int = 0
@@ -137,11 +143,11 @@ final class ListSceneViewModelTests: BaseXCTestCase {
             .store(in: &cancellables)
 
         // When
-        self.sut.filterList("Rick")
-        self.sut.filterList("Test")
-        self.sut.filterList("Morty")
+        await self.sut.filterList("Rick")
+        await self.sut.filterList("Test")
+        await self.sut.filterList("Morty")
 
-        waitForExpectations(timeout: 10)
+        wait(for: [expectation], timeout: 10)
 
         // Then
         XCTAssertNotNil(result)

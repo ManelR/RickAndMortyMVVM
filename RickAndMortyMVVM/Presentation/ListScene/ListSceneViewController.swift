@@ -38,7 +38,9 @@ class ListSceneViewController: UIViewController, StoryboardInstantiable {
         super.viewDidLoad()
         self.bind()
         self.configView()
-        self.viewModel.viewDidLoad()
+        Task {
+            await self.viewModel.viewDidLoad()
+        }
     }
 
     func bind() {
@@ -106,7 +108,11 @@ extension ListSceneViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.viewModel.didSelectRow(indexPath.row)
+        Task {
+            print("B")
+            await self.viewModel.didSelectRow(indexPath.row)
+        }
+        print("A")
     }
 }
 
@@ -114,6 +120,8 @@ extension ListSceneViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         print("Searching with: " + (searchController.searchBar.text ?? ""))
         let searchText = (searchController.searchBar.text ?? "")
-        self.viewModel.filterList(searchText)
+        Task {
+            await self.viewModel.filterList(searchText)
+        }
     }
 }

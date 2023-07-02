@@ -20,6 +20,10 @@ enum ListSceneRoute: String {
 final class ListSceneRouter: ListSceneRouterType {
     weak var context: UIViewController?
 
+    nonisolated init() {
+        
+    }
+
     func route(to route: ListSceneRoute, parameters: Any?...) {
 
         switch route {

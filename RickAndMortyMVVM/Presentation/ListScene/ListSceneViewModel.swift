@@ -10,9 +10,9 @@ import Combine
 
 // INPUT DEFINITION
 protocol ListSceneViewModelInput {
-    func viewDidLoad()
-    func didSelectRow(_ index: Int)
-    func filterList(_ filter: String)
+    func viewDidLoad() async
+    func didSelectRow(_ index: Int) async
+    func filterList(_ filter: String) async
 }
 
 // OUTPUT DEFINITION
@@ -21,6 +21,7 @@ protocol ListSceneViewModelOutput {
 }
 
 // PROTOCOL COMPOSITION
+@MainActor
 protocol ListSceneViewModelType: ListSceneViewModelInput, ListSceneViewModelOutput {
     var router: (any ListSceneRouterType)? { get set } // weak
 }
@@ -37,8 +38,8 @@ final class ListSceneViewModel: ListSceneViewModelType {
     @Published var pCharacters: [CharacterDomain]?
     var characters: Published<[CharacterDomain]?>.Publisher { $pCharacters }
 
-    init(router: (any ListSceneRouterType)? = DIRepository.shared.resolve(),
-         characterRepository: CharacterRepositoryType = DIRepository.shared.resolve()) {
+    nonisolated init(router: (any ListSceneRouterType)? = DIRepository.shared.resolve(),
+                     characterRepository: CharacterRepositoryType = DIRepository.shared.resolve()) {
         self.router = router
         self.characterRepository = characterRepository
     }
@@ -46,11 +47,11 @@ final class ListSceneViewModel: ListSceneViewModelType {
 
 // MARK: - INPUT IMPLEMENTATION
 extension ListSceneViewModel {
-    func viewDidLoad() {
+    func viewDidLoad() async {
         self.requestDataAndNotifyView()
     }
 
-    func didSelectRow(_ index: Int) {
+    func didSelectRow(_ index: Int) async {
         // Move to details
         if pCharacters?.count ?? 0 > index,
            let character = pCharacters?[index] {
@@ -60,7 +61,7 @@ extension ListSceneViewModel {
         }
     }
 
-    func filterList(_ filter: String) {
+    func filterList(_ filter: String) async {
         self.filter = filter
         self.requestDataAndNotifyView(delay: 500_000_000)
     }
@@ -81,9 +82,7 @@ extension ListSceneViewModel {
                 try Task.checkCancellation()
                 let response = try await self.characterRepository.getCharacters(filter: self.filter)
                 try Task.checkCancellation()
-                await MainActor.run {
-                    self.pCharacters = response
-                }
+                self.pCharacters = response
             } catch {
                 // TODO: Error
             }
